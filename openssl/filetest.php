@@ -15,9 +15,11 @@ $csr_option = fgets($fp);
 
 while ($name = fgetcsv($fp)) {
     echo $name[0];
+    $str = 'openssl req -new -key ' . $name[0] . '.key -out ' . $name[0] . '.csr -subj "' . $csr_option . '"';
     exec('openssl genrsa -des3 -out ' . $name[0] . '.key -passout pass:hoge -rand sha1.dat 2048');
     exec('openssl rsa -passin pass:hoge -in ' . $name[0] . '.key -out ' . $name[0] . '.key');
-    exec('openssl req -new -key ' . $name[0] . '.key -out ' . $name[0] . '.csr -subj "/C=JP/ST=Tokyo/L=Chiyoda-ku/O=NTT COMMUNICATIONS CORPORATION/OU=NetworkServices/CN=sugakunn"');
+    // exec('openssl req -new -key ' . $name[0] . '.key -out ' . $name[0] . '.csr -subj "/C=JP/ST=Tokyo/L=Chiyoda-ku/O=NTT COMMUNICATIONS CORPORATION/OU=NetworkServices/CN=sugakunn"');
+    exec($str);
 }
 // exec("openssl genrsa -des3 -out " . $name . " -passout pass:suga -rand sha1.dat 2048");
 
