@@ -15,8 +15,13 @@ func main() {
 	values.Add("alphabet", "Z")
 	values2 := url.Values{}
 	values2.Add("alphabet", "a")
-	resp, _ := http.PostForm("http://localhost:8080/alpha", values)
-	resp2, _ := http.PostForm("http://localhost:8080/alpha", values2) //<--- new
+
+	//社内
+	resp, _ := http.PostForm("http://alphabet.ms10.cf001.goo.ne.jp/alpha", values)
+	resp2, _ := http.PostForm("http://alphabet.ms10.cf001.goo.ne.jp/alpha", values2) //<--- new
+	// ローカル
+	// resp, _ := http.PostForm("http://localhost:8080/alpha", values)
+	// resp2, _ := http.PostForm("http://localhost:8080/alpha", values2) //<--- new
 	htmlData, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)

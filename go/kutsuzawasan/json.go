@@ -15,15 +15,18 @@ func main() {
 	// }
 	values := url.Values{}
 	values.Add("alphabet", "Z")
-	resp, _ := http.PostForm("http://localhost:8080/alpha", values)
+	// resp, _ := http.PostForm("http://localhost:8080/alpha", values)
+	resp, _ := http.PostForm("http://alphabet.ms10.cf001.goo.ne.jp/alpha", values)
 	htmlData, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	defer resp.Body.Close()
-	fmt.Println(reflect.TypeOf(resp.Body))
+	fmt.Println(reflect.TypeOf(resp))
 	fmt.Println(reflect.TypeOf(htmlData))
+	fmt.Println(htmlData)
+	fmt.Println(string(htmlData))
 
 	// var x = string(htmlData)
 	// fmt.Println(x.name)

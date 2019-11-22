@@ -107,13 +107,16 @@ class Dog implements Creature
 }
 
 
-$cat = new Animal(new Cat());
-$cat->say();
-$cat->stroking();
+// $cat = new Animal(new Cat());
+// $cat->say();
+// $cat->stroking();
 
-$pochi = new Animal(new Dog());
-$pochi->say();
-$pochi->stroking();
+// $pochi = new Animal(new Dog());
+// $pochi->say();
+// $pochi->stroking();
 
 // $xtest = new XTest('須賀');
 // $xtest->hello();
+
+
+
