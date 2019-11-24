@@ -3,11 +3,16 @@ package main
 // var x = "aa"
 
 func main() {
-	// x := 1
-	for i, v := range []int{11, 22, 33, 44} {
+	var i int
+	i = 0
+LOOP:
+	for {
 		println(i)
-		println(v)
+		switch {
+		case i%2 == 1:
+			break LOOP
+		}
+		i++
 	}
-	// println("hello,世界")
-	// println(x)
+
 }
